@@ -1,5 +1,5 @@
 {% set name = "tardigrade_solver_tools" %}
-{% set version = "0.6.5" %}
+{% set version = "0.6.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/UCBoulder/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 806cad2e35bc942f351559ab02708244e7595a9942ecba47b1739abc114cc61f
+  sha256: 25c7d3caa17ddf02fcff3914cafedcc6d99cf00029c924e89f732bd76d89ede7
 
 build:
   number: 0
@@ -20,6 +20,8 @@ build:
     - cmake --build build --target tardigrade_solver_tools
     - cmake --install build --prefix ${PREFIX}
   skip: true  # [win]
+  run_exports:
+    - {{ pin_subpackage(name|lower, max_pin='x.x') }}
 
 requirements:
   build:
@@ -44,12 +46,11 @@ requirements:
     - setuptools >=77
     - setuptools_scm >=8
     - eigen >=3.3.7
+    - eigen-abi-devel
     - tardigrade_error_tools >=0.9.8
     - tardigrade_vector_tools >=0.8.7
   run:
     - eigen >=3.3.7
-    - tardigrade_error_tools >=0.9.8
-    - tardigrade_vector_tools >=0.8.7
 
 test:
   requires:
