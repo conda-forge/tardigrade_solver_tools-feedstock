@@ -1,5 +1,5 @@
 {% set name = "tardigrade_solver_tools" %}
-{% set version = "0.6.5" %}
+{% set version = "0.6.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/UCBoulder/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 806cad2e35bc942f351559ab02708244e7595a9942ecba47b1739abc114cc61f
+  sha256: 25c7d3caa17ddf02fcff3914cafedcc6d99cf00029c924e89f732bd76d89ede7
 
 build:
   number: 0
@@ -74,7 +74,7 @@ about:
   home: https://github.com/UCBoulder/tardigrade_solver_tools
   license: BSD-3-Clause
   license_file: LICENSE
-  summary:  'A collection of nonlinear solvers and optimizers for small to moderately sized problems'
+  summary: 'A collection of nonlinear solvers and optimizers for small to moderately sized problems'
   description: |
     tardigrade_solver_tools Tools for performing solves of nonlinear equations.
   dev_url: https://github.com/UCBoulder/tardigrade_solver_tools
